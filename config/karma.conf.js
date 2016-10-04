@@ -1,37 +1,22 @@
-var webpackConfig = require('./webpack.test');
+Error.stackTraceLimit = Infinity;
 
-module.exports = function (config) {
-  var _config = {
-    basePath: '',
+require('core-js/es6');
+require('reflect-metadata');
 
-    frameworks: ['jasmine'],
+require('zone.js/dist/zone');
+require('zone.js/dist/long-stack-trace-zone');
+require('zone.js/dist/jasmine-patch');
+require('zone.js/dist/async-test');
+require('zone.js/dist/fake-async-test');
 
-    files: [
-       {pattern: './karma-test-shim.js', watched: false}
-    ],
+var appContext = require.context('../tests', true, /\.spec\.ts/);
 
-    preprocessors: {
-      './karma-test-shim.js': ['webpack', 'sourcemap']
-    },
+appContext.keys().forEach(appContext);
 
-    webpack: webpackConfig,
+var testing = require('@angular/core/testing');
+var browser = require('@angular/platform-browser-dynamic/testing');
 
-    webpackMiddleware: {
-      stats: 'errors-only'
-    },
-
-    webpackServer: {
-      noInfo: true
-    },
-
-    reporters: ['progress'],
-    port: 9876,
-    colors: true,
-    logLevel: config.LOG_INFO,
-    autoWatch: false,
-    browsers: ['PhantomJS'],
-    singleRun: true
-  };
-
-  config.set(_config);
-};
+testing.setBaseTestProviders(
+  browser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
+  browser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS
+);
