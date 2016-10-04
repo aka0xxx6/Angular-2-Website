@@ -3,6 +3,10 @@
 */
 
 body {
-    background: #cccccc;
-    color: #fff;
+    /*background: #cccccc;
+    color: #fff;*/
+}
+
+.spacer{
+  height: 50px;
 }

@@ -11,6 +11,11 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {HomeComponent} from "./components/routing_components/home/home.component";
+import {ReferenceComponent} from "./components/routing_components/reference/reference.component";
+import {ItknowledgeexchangeComponent} from "./components/routing_components/itknowledgeexchange/itknowledgeexchange.component";
+import {ImpressumComponent} from "./components/routing_components/impressum/impressum.component";
+import {HeaderComponent} from "./components/util_components/header/header.component";
+import {FooterComponent} from "./components/util_components/footer/footer.component";
 
 
 @NgModule({
@@ -19,7 +24,12 @@ import {HomeComponent} from "./components/routing_components/home/home.component
     ],
     declarations: [
       AppComponent,
-      HomeComponent
+      HomeComponent,
+      ReferenceComponent,
+      ImpressumComponent,
+      ItknowledgeexchangeComponent,
+      HeaderComponent,
+      FooterComponent
     ],
     imports: [
       HttpModule,

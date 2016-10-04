@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import '../../public/css/styles.css';
 @Component({
-  selector: 'funbyte-app',
+  selector: 'rh-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
