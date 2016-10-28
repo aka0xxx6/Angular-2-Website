@@ -1,8 +1,8 @@
 import { Routes }  from '@angular/router';
 
-import { HomeComponent } from './components/routing_components/home/home.component.ts';
-import { ReferenceComponent } from './components/routing_components/reference/reference.component.ts';
-import { ItknowledgeexchangeComponent } from './components/routing_components/itknowledgeexchange/itknowledgeexchange.component.ts';
+import { HomeComponent } from './components/routing_components/home/home.component';
+import { ReferenceComponent } from './components/routing_components/reference/reference.component';
+import { ItknowledgeexchangeComponent } from './components/routing_components/itknowledgeexchange/itknowledgeexchange.component';
 import {ImpressumComponent} from "./components/routing_components/impressum/impressum.component";
 
 export const ROUTES: Routes = [

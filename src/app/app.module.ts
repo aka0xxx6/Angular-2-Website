@@ -1,7 +1,10 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-
+import {
+    LocationStrategy,
+    HashLocationStrategy
+} from '@angular/common';
 import { AppComponent }  from './app.component';
 
 import { ROUTES } from './app.routes';
@@ -20,32 +23,32 @@ import {FooterComponent} from "./components/util_components/footer/footer.compon
 
 @NgModule({
     bootstrap: [
-      AppComponent
+        AppComponent
     ],
     declarations: [
-      AppComponent,
-      HomeComponent,
-      ReferenceComponent,
-      ImpressumComponent,
-      ItknowledgeexchangeComponent,
-      HeaderComponent,
-      FooterComponent
+        AppComponent,
+        HomeComponent,
+        ReferenceComponent,
+        ImpressumComponent,
+        ItknowledgeexchangeComponent,
+        HeaderComponent,
+        FooterComponent
     ],
     imports: [
-      HttpModule,
-      BrowserModule,
-      FormsModule,
-      ReactiveFormsModule,
-      RouterModule.forRoot(ROUTES, { useHash: false })
+        HttpModule,
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot(ROUTES, { useHash: false })
     ],
     schemas: [
-      CUSTOM_ELEMENTS_SCHEMA
+        CUSTOM_ELEMENTS_SCHEMA
     ],
     exports: [
 
     ],
     providers: [
-
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
     ]
 })
 export class AppModule { }
